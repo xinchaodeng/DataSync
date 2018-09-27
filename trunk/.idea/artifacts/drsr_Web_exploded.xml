@@ -99,6 +99,8 @@
         </element>
       </element>
       <element id="javaee-facet-resources" facet="portal/web/Web" />
+      <element id="library" level="project" name="Maven: cn.csdb:commons:1.0-SNAPSHOT" />
+      <element id="library" level="project" name="Maven: cn.csdb:datacore:1.0-SNAPSHOT" />
     </root>
   </artifact>
 </component>

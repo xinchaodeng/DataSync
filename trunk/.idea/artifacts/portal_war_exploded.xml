@@ -94,9 +94,13 @@
           <element id="library" level="project" name="Maven: org.apache.poi:poi:3.10-FINAL" />
           <element id="library" level="project" name="Maven: org.apache.xmlbeans:xmlbeans:2.6.0" />
           <element id="library" level="project" name="Maven: stax:stax-api:1.0.1" />
+          <element id="library" level="project" name="Maven: javax.servlet:javax.servlet-api:4.0.0" />
+          <element id="library" level="project" name="Maven: javax.servlet.jsp:jsp-api:2.1" />
         </element>
       </element>
       <element id="javaee-facet-resources" facet="portal/web/Web" />
+      <element id="library" level="project" name="Maven: cn.csdb:commons:1.0-SNAPSHOT" />
+      <element id="library" level="project" name="Maven: cn.csdb:datacore:1.0-SNAPSHOT" />
     </root>
   </artifact>
 </component>

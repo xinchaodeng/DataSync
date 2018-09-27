@@ -50,6 +50,8 @@
     <orderEntry type="library" name="Maven: com.github.jsqlparser:jsqlparser:1.0" level="project" />
     <orderEntry type="library" name="Maven: com.mchange:c3p0:0.9.5.2" level="project" />
     <orderEntry type="library" name="Maven: com.mchange:mchange-commons-java:0.2.11" level="project" />
+    <orderEntry type="library" name="Maven: cn.csdb:commons:1.0-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: cn.csdb:datacore:1.0-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: commons-net:commons-net:3.6" level="project" />
     <orderEntry type="library" name="Maven: com.alibaba:fastjson:1.2.49" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-core:4.3.19.RELEASE" level="project" />
