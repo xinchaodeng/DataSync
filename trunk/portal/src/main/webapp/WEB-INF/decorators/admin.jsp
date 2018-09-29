@@ -36,71 +36,55 @@
     <link href="${ctx}/resources/bundles/metronic/css/themes/light.css" rel="stylesheet" type="text/css"
           id="style_color"/>
     <link href="${ctx}/resources/bundles/metronic/css/custom.css" rel="stylesheet" type="text/css"/>
-    <link href="${ctx}/resources/css/globle.css" rel="stylesheet" type="text/css"/>
+    <link href="${ctx}/resources/css/reset.css" rel="stylesheet" type="text/css"/>
+    <link href="${ctx}/resources/css/main.css" rel="stylesheet" type="text/css"/>
     <!-- END THEME STYLES -->
     <link rel="shortcut icon" href="${ctx}/resources/img/favicon.ico"/>
     <style type="text/css">
         a, a:hover, a:link  ,a:visited, a:active, a:hover{
             text-decoration: none !important;
         }
+        body{
+            background-color: gainsboro;
+        }
+        .main-wrap{
+            background-color: white;
+        }
     </style>
 </head>
-<body class="page-quick-sidebar-over-content page-style-square">
+<body>
 <!-- BEGIN HEADER -->
-<div class="page-header navbar navbar-static-top" style="background-color: #438eb9">
-    <!-- BEGIN HEADER INNER -->
-    <div class="page-header-inner">
-        <!-- BEGIN LOGO -->
-        <div class="page-logo" style="width: auto;">
-            <a href="${ctx}/">
-                <h4 style="margin-top:14px ">DataSync专题库门户管理系统</h4>
-            </a>
-
-            <div class="menu-toggler sidebar-toggler hide">
-                <!-- DOC: Remove the above "hide" to enable the sidebar toggler button on header -->
+<div class="main-wrap">
+    <div class="page-head">
+        <div class="head-left">
+            <img src="${ctx}/resources/img/u7.png" >
+        </div>
+        <div class="head-right">
+            <div class="head-banner">
+                <span style="font-weight:700;font-family: '新細明體-ExtB Bold', '新細明體-ExtB Regular', '新細明體-ExtB'">DataSync</span>
+                <span style="font-weight:400;">&nbsp;&nbsp;&nbsp;二级机构商业、行业数据汇交客户端</span>
+            </div>
+            <div class="login-btn">
+                请登录
             </div>
         </div>
-        <!-- END LOGO -->
-        <!-- BEGIN RESPONSIVE MENU TOGGLER -->
-        <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse"
-           data-target=".navbar-collapse">
-        </a>
-        <!-- END RESPONSIVE MENU TOGGLER -->
-        <!-- BEGIN TOP NAVIGATION MENU -->
-        <div class="top-menu">
-            <ul class="nav navbar-nav pull-right">
-
+    </div>
+    <div class="page-body">
+        <div class="body-left">
+            <ul class="list-ul">
+                <li><a href="#">专题信息</a></li>
+                <li><a href="#">数据源</a></li>
+                <li><a href="#">新建任务</a></li>
+                <li><a href="#">数据任务</a></li>
             </ul>
         </div>
-        <!-- END TOP NAVIGATION MENU -->
-    </div>
-    <!-- END HEADER INNER -->
-</div>
-<!-- END HEADER -->
-<div class="clearfix"></div>
-<div class="page-container" style="min-height: 500px;">
-    <!-- BEGIN SIDEBAR -->
-    <div class="page-sidebar-wrapper">
-        <div class="page-sidebar navbar-collapse collapse">
-
+        <div class="body-right">
+            <sitemesh:write property="body"/>
         </div>
     </div>
-    <!-- END SIDEBAR -->
-    <!-- BEGIN CONTENT -->
-    <div class="page-content-wrapper">
-        <sitemesh:write property="body"/>
-    </div>
-    <!-- END CONTENT -->
 </div>
+<!-- END HEADER -->
 <!-- BEGIN FOOTER -->
-<div class="page-footer" style="text-align: center;background-color: #454241">
-    <div class="page-footer-inner" style="color: #FFF;float: none">
-        2018-2020 &copy; 中国科学院计算机网络信息中心大数据部.版权所有.
-    </div>
-    <div class="scroll-to-top">
-        <i class="icon-arrow-up"></i>
-    </div>
-</div>
 <!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
 <!-- BEGIN CORE PLUGINS -->
 <!--[if lt IE 9]>
@@ -127,6 +111,7 @@
 <script src="${ctx}/resources/bundles/bootbox/bootbox.min.js"></script>
 <!-- END PAGE LEVEL SCRIPTS -->
 <script>
+    document.querySelector(".main-wrap").style.height=window.innerHeight + "px";
     jQuery(document).ready(function () {
         $.ajaxSetup({ cache: false });
         Metronic.init('${ctx}'); // init metronic core componets
