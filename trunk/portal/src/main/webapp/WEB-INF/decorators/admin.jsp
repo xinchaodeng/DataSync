@@ -111,6 +111,9 @@
 <script src="${ctx}/resources/bundles/bootbox/bootbox.min.js"></script>
 <!-- END PAGE LEVEL SCRIPTS -->
 <script>
+    function getName(num) {
+        return "aaa";
+    }
     document.querySelector(".main-wrap").style.height=window.innerHeight + "px";
     jQuery(document).ready(function () {
         $.ajaxSetup({ cache: false });

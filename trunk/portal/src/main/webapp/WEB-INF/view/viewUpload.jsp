@@ -45,8 +45,8 @@
                 <th>操作</th>
             </tr>
             </thead>
-            <tbody>
-            <tr>
+            <tbody id="bd-data">
+            <%--<tr>
                 <td>1</td>
                 <td>aaaa</td>
                 <td>aaaaaa</td>
@@ -63,7 +63,7 @@
                 <td>2018-04-12 09:12</td>
                 <td>成功</td>
                 <td><button type="button" class="btn btn-success">重新上传</button></td>
-            </tr>
+            </tr>--%>
             </tbody>
         </table>
         <div class="page-message">
@@ -72,6 +72,19 @@
         <div class="page-list"></div>
     </div>
 </div>
+<script type="text/html" id="resourceTmp1">
+    {{each list as value i}}
+        <tr keyIdTr="{{value.id}}">
+            <td>{{i + 1}}</td>
+            <td>{{value.name}}</td>
+            <td>{{value.data}}</td>
+            <td>{{value.source}}</td>
+            <td>{{value.time}}</td>
+            <td class="upload-percent">--</td>
+            <td><button type="button" class="btn btn-success" keyIdTd="{{value.id}}" >{{btnName(value.num)}}</button></td>
+        </tr>
+    {{/each}}
+</script>
 </body>
 <!--为了加快页面加载速度，请把js文件放到这个div里-->
 <div id="siteMeshJavaScript">
@@ -79,28 +92,71 @@
     <script src="${ctx}/resources/bundles/artTemplate/template.js"></script>
     <script src="${ctx}/resources/js/subStrLength.js"></script>
     <script type="text/javascript">
-        $("#upload-list").delegate("button","click",function () {
-            var text = $(this).text()
-            switch (text){
-                case "上传":
-                    $(this).text("正在上传");
-                    break;
-                case "正在上传":
-                    $(this).text("暂停上传");
-                    break;
-                case "暂停上传":
-                    $(this).text("正在上传");
-                    break;
-                case "暂停上传":
-                    $(this).text("暂停上传");
-                    break;
-                case "上传完成":
-                    $(this).text("暂停上传");
-                    break;
-
+        getName(1);
+        var uploadList=[];
+        template.helper("btnName",function (num) {
+            var name=""
+            if(num ==0){
+                name="上传"
+            }else if(num == 1){
+                name ="正在上传"
+            }else {
+                name="重新上传"
             }
+            return name
         })
-        var uploadList =[{}]
+        console.log($("#bd-data").find("#sfsdfs").html())
+        $("#upload-list").delegate("button","click",function () {
+            /*send request*/
+            $(this).text()
+            /*send upload request*/
+
+        })
+        var List ={
+            list:[
+                {
+                    id:"111111111",
+                    name:"aaa",
+                    data:"关系数据库",
+                    source:"a数据库",
+                    time:"2018-04-12 09:12",
+                    num:0
+                },
+                {
+                    id:"222222",
+                    name:"aaa",
+                    data:"关系数据库",
+                    source:"a数据库",
+                    time:"2018-04-12 09:12",
+                    num:1
+                },
+                {
+                    id:"3333333",
+                    name:"aaa",
+                    data:"关系数据库",
+                    source:"a数据库",
+                    time:"2018-04-12 09:12",
+                    num:2
+                },
+                {
+                    id:"4444444",
+                    name:"aaa",
+                    data:"关系数据库",
+                    source:"a数据库",
+                    time:"2018-04-12 09:12",
+                    num:1
+                }
+            ]
+        }
+
+            var aaa = template("resourceTmp1", List);
+            $("#bd-data").append(aaa);
+
+        function getPrecent(id) {
+            setInterval(function () {
+              console.log(id)
+            },1100)
+        }
 
     </script>
 </div>

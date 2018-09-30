@@ -91,9 +91,6 @@ a, a:hover, a:link  ,a:visited, a:active, a:hover{
     width: 191px;
     padding-top: 80px;
 }
-.list-ul{
-    list-style: none;
-}
 .list-ul a{
     display: block;
     width: 191px;
